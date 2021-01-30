@@ -15,21 +15,20 @@ class AbstractStudent(object):
 class Student(AbstractStudent):
 
     def study(self):
-        print ("I'm normal worker. I'm working.")
+        print ("Aku pelajar. aku lagi belajar ")
 
     def eat(self):
-        print ("Lunch break....(5 secs)")
+        print ("Lunch time....(5 secs)")
         time.sleep(5)
 
 class SuperStudent(AbstractStudent):
 
     def study(self):
-        print ("I'm super worker. I work very hard!")
+        print ("Aku pelajar yang giat. ak giat belajar !")
 
     def eat(self):
         print ("Lunch break....(3 secs)")
         time.sleep(3)
-
 
 class School(object):
 
@@ -37,12 +36,12 @@ class School(object):
         self.student = None
 
     def set_student(self, student):
-        assert isinstance(student, AbstractStudent), "`worker` must be of type {}".format(AbstractStudent)
+        assert isinstance(student, AbstractStudent), "`student` must be of type {}".format(AbstractStudent)
 
         self.student = student
 
     def manage(self):
-        self.student.work()
+        self.student.study()
 
     def lunch_break(self):
         self.student.eat()
@@ -51,10 +50,9 @@ class School(object):
 class Robot(AbstractStudent):
 
     def study(self):
-        print ("I'm a robot. I'm working....")
-
+        print ("Aku robot. aku lagi belajar...")
     def eat(self):
-        print ("I don't need to eat....")   # This code doing nothing but it is a must. (Bad!)
+        print("Aku tidak makan")
 
 def main():
 
